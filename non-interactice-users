@@ -3,27 +3,25 @@ Create a user named ammar with a non-interactive shell on App Server 1.
 
 
 
-List all users:
+Step-1: To list all users:
 cat /etc/passwd
 
-TO just usernames only:
+Step-2: To list just usernames only:
 cut -d: -f1 /etc/passwd
 
-To specifically check if ammar already exists:
+Step-3: To specifically check if ammar already exists:
 id ammar
 
-The common non-interactive shell is:
-/sbin/nologin
-
+NOTE:
+The common non-interactive shell is: /sbin/nologin
 (or sometimes /usr/sbin/nologin depending on the server)
+We can verify this using: "which nologin"
 
-We can verify this using:
-which nologin
-
-To create an user
+Step-4: To create an user
 sudo useradd -s /usr/sbin/nologin ammar
 
-Verify:
+Step-5: Verify:
 grep ammar /etc/passwd
+
 
 
